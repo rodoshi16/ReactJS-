@@ -56,7 +56,7 @@ When user clicks on something -> it sends a request to the index.html file ->  t
 
 ***Code***
 
-**1. What is function and return inside App.js?**
+**8. What is function and return inside App.js?**
 Function is a javascript function that returns a react element. Function is a component body placeholder and return makes sure to return a react element to the index.html
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
     ); 
 }
 
-**1. Can we have a function without return inside App.js?**
+**9. Can we have a function without return inside App.js?**
 Yes, sometimes we might not want to return a react element, maybe we need to log something or fire an event. 
 
 function App() {
@@ -75,9 +75,141 @@ function App() {
 }
 export default app; 
 
-**2. What is the role of export default inside App.js?**
+
+**10. What is the role of export default inside App.js?**
 Export default just makes this app available for import using "import" statements in other files. Almost all the time in react, 
 we say import <component name> from another file. 
+
+***JSX***
+
+In react, when we write code such as functions, it looks like HTML. However, react libraries such as Babel convert the functions to return react elements from the code. 
+
+Javascript != JSX 
+JSX is a syntax extension for Javascript that allows developers to write HTML like code within Javascript files. 
+
+Reasons to use JSX within react instead of straight up Javascript: 
+
+1. Code is readable and understandable better
+2. provides error checking 
+3. supports Javascript expressions
+4. Improved performance
+5. Code is reusable 
+
+**11. How does browser understand JSX code?**
+Let's say chrome or wherever you run local host to run your react app only understands HTML/CSS, Javascript. Therefore, babel first converts this Javascript so that browser can understand it. 
+
+If bable didn't exist for example, then you would need a transpiler to read the JSX for browser. 
+
+**12. What is a transpiler?**
+A tool which converts source code from one programming language to another. Ex: our bestie Babel
+
+**13. What is the role of fragment in react?**
+In react if you have two seperate divs/elements, react will complain and not allow this. 
+
+Bad solution: Wrap these elements with another div tag. This is wrong though since this extra div tag can impact the code layout massively. 
+
+function App() {
+    return (
+        <div>
+        <div>a<div>
+        <div>b<div>
+        <div>
+
+    ); 
+}
+
+Solution: Add a Fragment tag. 
+
+function App() {
+    return (
+        <Fragment>
+        <div>a<div>
+        <div>b<div>
+        <Fragment>
+
+    ); 
+}
+
+**14.How do you iterate over a list in JSX? What is map() method?**
+Let's say we want to take on a list and multiply every element by 2. In python, we usually 
+run a loop -> for e in l, l[e] = l*2. In JSX, there is a map method which maps an input 
+to an output and its bijective, duh. 
+
+function App() {
+    const numbers = [1,2,3,4]
+    return (
+        numbers.map(number) => (number*2)
+    ); 
+}
+
+**15.What are prpos in JSX?**
+Props are a way to pass data from a parent component to a child component. 
+
+function App() {
+    return (
+        ChildComponent name="Happy" purpose="Coding"
+    );  
+}
+
+function ChildComponent(props) {
+    return <div>{props.name}, {props.purpose}
+}
+
+**16.What are spread operators?**
+Lets say just like in the last example, i have multiple properties like name,purpose for the child component and the 
+list keeps growing longer. In that case, we should use a spread operator. What that does is
+
+function App() {
+    const props = {name: "Adrian", purpose: "manager"}; 
+    return (
+        <childComponent {...props}/>
+    )
+}
+
+**17.What are the types of conditional rendering in JSX?**
+
+-> if else statements
+-> ternary operator
+Lets refactor if else statement to ternary, 
+
+function conditional() {
+    if {2>1}
+    {
+        return "abc"
+    }
+    else 
+    {
+        return "xyz"
+    }
+}
+
+function conditional(){
+    return 2>1 ? "abc" : "xyz"; 
+}
+
+-> && statements 
+
+functional And() {
+    return 2>1 && 5>4 ? "abc" : "xyz"; 
+}
+
+-> switch statements 
+
+function switch() {
+    const value = 2; 
+    switch (value){
+      case 2:
+        return "abc"
+      case 1: 
+        return "xyz"
+      default:
+        return null; 
+    }
+}
+
+
+
+
 
 
 
