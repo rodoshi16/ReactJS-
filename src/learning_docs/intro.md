@@ -38,6 +38,51 @@ index.html file -> the entry point for react application. All the components are
 **6. What about src folder?**
 Source code developed by you should be here. 
 
+App.css -> 
+App.js -> It is the top/main root level component in a React application, and its responsible for rendering all of the other components. 
+index.css -> 
+index.js -> It is an integration file, where the code in App.js is converted to the actual browser DOM. This is possible because of this code: const root = ReactDOM.createRoot(document.getElementById('root')); This creates root element again. In short, it is a javascript file which renders all the components and replaces the root element of index.html file with the newly rendered root element. 
+
+This renders all the root components: 
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+**7. How does React App load and display the components in browser?**
+When user clicks on something -> it sends a request to the index.html file ->  then index.js file is loaded on the browser -> index.js loads the App.js file -> sends response back to index.html. 
+
+
+***Code***
+
+**1. What is function and return inside App.js?**
+Function is a javascript function that returns a react element. Function is a component body placeholder and return makes sure to return a react element to the index.html
+
+function App() {
+    return (
+        <div classname='App'>
+        Learning React
+        <div>
+    ); 
+}
+
+**1. Can we have a function without return inside App.js?**
+Yes, sometimes we might not want to return a react element, maybe we need to log something or fire an event. 
+
+function App() {
+    console.log("clicked!")
+}
+export default app; 
+
+**2. What is the role of export default inside App.js?**
+Export default just makes this app available for import using "import" statements in other files. Almost all the time in react, 
+we say import <component name> from another file. 
+
+
+
+
+
 
 
 
