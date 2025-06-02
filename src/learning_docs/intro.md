@@ -44,11 +44,13 @@ index.css ->
 index.js -> It is an integration file, where the code in App.js is converted to the actual browser DOM. This is possible because of this code: const root = ReactDOM.createRoot(document.getElementById('root')); This creates root element again. In short, it is a javascript file which renders all the components and replaces the root element of index.html file with the newly rendered root element. 
 
 This renders all the root components: 
+```
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+```
 
 **7. How does React App load and display the components in browser?**
 When user clicks on something -> it sends a request to the index.html file ->  then index.js file is loaded on the browser -> index.js loads the App.js file -> sends response back to index.html. 
@@ -59,6 +61,7 @@ When user clicks on something -> it sends a request to the index.html file ->  t
 **8. What is function and return inside App.js?**
 Function is a javascript function that returns a react element. Function is a component body placeholder and return makes sure to return a react element to the index.html
 
+```
 function App() {
     return (
         <div classname='App'>
@@ -66,14 +69,17 @@ function App() {
         <div>
     ); 
 }
+```
 
 **9. Can we have a function without return inside App.js?**
 Yes, sometimes we might not want to return a react element, maybe we need to log something or fire an event. 
 
+```
 function App() {
     console.log("clicked!")
 }
 export default app; 
+```
 
 
 **10. What is the role of export default inside App.js?**
@@ -108,6 +114,7 @@ In react if you have two seperate divs/elements, react will complain and not all
 
 Bad solution: Wrap these elements with another div tag. This is wrong though since this extra div tag can impact the code layout massively. 
 
+```
 function App() {
     return (
         <div>
@@ -117,9 +124,11 @@ function App() {
 
     ); 
 }
+```
 
 Solution: Add a Fragment tag. 
 
+```
 function App() {
     return (
         <Fragment>
@@ -129,42 +138,50 @@ function App() {
 
     ); 
 }
+```
 
 **14.How do you iterate over a list in JSX? What is map() method?**
 Let's say we want to take on a list and multiply every element by 2. In python, we usually 
 run a loop -> for e in l, l[e] = l*2. In JSX, there is a map method which maps an input 
 to an output and its bijective, duh. 
 
+```
 function App() {
     const numbers = [1,2,3,4]
     return (
         numbers.map(number) => (number*2)
     ); 
 }
+```
 
 **15.What are prpos in JSX?**
 Props are a way to pass data from a parent component to a child component. 
 
+```
 function App() {
     return (
         ChildComponent name="Happy" purpose="Coding"
     );  
 }
 
+
 function ChildComponent(props) {
     return <div>{props.name}, {props.purpose}
 }
+```
 
 **16.What are spread operators?**
 Lets say just like in the last example, i have multiple properties like name,purpose for the child component and the 
 list keeps growing longer. In that case, we should use a spread operator. What that does is
 
+```
 function App() {
     const props = {name: "Adrian", purpose: "manager"}; 
     return (
         <childComponent {...props}/>
     )
 }
+```
 
 **17.What are the types of conditional rendering in JSX?**
 
@@ -172,6 +189,7 @@ function App() {
 -> ternary operator
 Lets refactor if else statement to ternary, 
 
+```
 function conditional() {
     if {2>1}
     {
@@ -183,18 +201,23 @@ function conditional() {
     }
 }
 
+
 function conditional(){
     return 2>1 ? "abc" : "xyz"; 
 }
+```
 
 -> && statements 
 
+```
 functional And() {
     return 2>1 && 5>4 ? "abc" : "xyz"; 
 }
+```
 
 -> switch statements 
 
+```
 function switch() {
     const value = 2; 
     switch (value){
@@ -206,6 +229,7 @@ function switch() {
         return null; 
     }
 }
+```
 
 
 
