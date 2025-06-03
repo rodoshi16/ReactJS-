@@ -1,8 +1,19 @@
-import App from './App'
 
-function myApp() {
+function MyButton() {
   return (
-    <div></div>
+    <button>I'm a button</button>
   ); 
 }
-export default App; 
+
+function MyApp() {
+  return (
+    <div>
+      <h1>Welcome to my app</h1>
+      <MyButton />
+    </div>
+  ); 
+}
+
+export default MyApp; 
+
+
