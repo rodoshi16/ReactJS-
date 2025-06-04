@@ -1,4 +1,5 @@
 **Components**
+
 When you make a function with a capital letter, it becomes a component you can use/nest within other components. 
 
 ```
@@ -21,10 +22,12 @@ export default MyApp;
 ```
 
 **Styles**
+
 To add a style to a JSX, use a CSS class with classname. <img className="Me">
 The css class "Me" is then written in a seperate file 
 
 **Curly braces**
+
 You can use curly braces to add some variable from code and display. {user.name}
 
 To add an image under a username, 
@@ -59,6 +62,7 @@ style is React is an inline prop which accept an object, where you can define ce
 color, fontSize, backgroundColor, marginTop, display etc. Notice they are in camelCase. 
 
 **Conditional rendering**
+
 We can use if/else or ternary operators 
 
 ```
@@ -87,6 +91,7 @@ OR,
 ``` 
 
 **Rendering lists**
+
 Products here is the list, product is the iterator. 
 <li> is list item in HTML used to display items in a list. When you're iterating through the list with .map, and creating <li> elements that displays the title and id. Then we put those in an <ul> element which is essentially bullets. 
 
