@@ -85,3 +85,51 @@ OR,
 )
 } 
 ``` 
+
+**Rendering lists**
+Products here is the list, product is the iterator. 
+<li> is list item in HTML used to display items in a list. When you're iterating through the list with .map, and creating <li> elements that displays the title and id. Then we put those in an <ul> element which is essentially bullets. 
+
+
+
+```
+const products = [
+  {title: 'Cabbage', id: 1}, 
+  {title: 'Garlilc', id: 2}, 
+]
+
+const listItems = products.map(product => 
+  <li key={product.id}>
+    {product.title}
+  </li>
+
+  return (
+    <ul>{listItems}</ul>
+  )
+); 
+```
+
+**Responding to events**
+
+handleClick here is simply an event handling function. For the button we're making here, we can 
+pass it down to onClick which is an event handler. 
+
+```
+function MyButton() {
+  function handleClick() {
+    alert("It has been clicked")
+  }
+
+  return (
+    <button onClick={handleClick}>
+    Click me
+    <button>
+  )
+}
+```
+
+**Hooks**
+Quick trick -> functions starting with "use" are called Hooks. useState is a built in hook but you can create your own. 
+
+
+
