@@ -124,10 +124,20 @@ function ProductTable({ products }) {
 
 
 function FilterableProductTable({products}) {
+    const [filterText, setFilterText] = useState(''); 
+    const [inStockOnly, setInStockOnly] = useState(false); 
+
   return (
     <div>
-       <SearchBar />
-      <ProductTable products={products}/>
+       <SearchBar 
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+
+       />
+      <ProductTable 
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        products={products}/>
     </div>
   ); 
 }
@@ -156,6 +166,17 @@ also change depending on what the user enters.
 
 State is like a component's memory. It lets a component keep track of some information and change it in response 
 to interactions. 
+
+**Step 4: Identify where your state should live**
+
+So what do we do with the state we identify? You need to find which components are responsible for changing the state or owns the state. 
+Since react uses one way data flow, data is passed from parent to child components via props. 
+
+1. Identify every component that renders something based on the state
+2. Place the state into some component above the common parent 
+3. Alternatively, you can create a single component responsible for holding the state
+
+You can add state with the help of hooks in parent functions and set the values accordingly. 
 
 
 
