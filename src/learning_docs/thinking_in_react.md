@@ -179,4 +179,7 @@ Since react uses one way data flow, data is passed from parent to child componen
 You can add state with the help of hooks in parent functions and set the values accordingly. 
 
 
+**Step 5: Add inverse data flow**
 
+Remember that your state in this application should change based on user input. Therefore, we always the set function in the hook
+to set it to the current state. Inside of your function, for example SearchBar, you can use onChange event handler to handle it correctly. 
