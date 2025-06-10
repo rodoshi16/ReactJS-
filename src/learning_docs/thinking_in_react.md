@@ -1,4 +1,4 @@
-**Thinking in React**
+***Thinking in React***
 
 
 When you want to build an app/dashboard in react, you will realize that are there multiple things you need to code which can get overwhelming fast. 
@@ -6,7 +6,7 @@ Therefore, the way to think about the problem in react is to break it into multi
 
 There are 5 simple steps to build UI in react:
 
-*Step 1: Break the UI into a component hierarchy*
+**Step 1: Break the UI into a component hierarchy**
 
 Split the design into different pieces. 
 -> programming: Use single responsibility principle to make sure that a component does only one thing. 
@@ -20,7 +20,7 @@ Notice in the image that, the parent component is FilterableProductTable.
 FilterableProductTable -> SearchBar + ProductTable 
 ProductTable -> ProductCategoryRow + ProductRow
 
-*Step 2: Build a static version in React 
+**Step 2: Build a static version in React**
 
 Adding interactivity requires a lot more thinking and complexity. Therefore, you can build components that reuse other components
 and pass data using props. 
@@ -141,7 +141,21 @@ export default function App() {
 
 ```
 
+**Step 3: Find the minimal but complete representation of UI state**
 
+For state management, always remember to not repeat yourself and identify what is state correctly. 
+
+- Does it remain unchanged over time? 
+- Is it passed from a parent via props? 
+- Can you compute it based on existing state in your component? 
+
+If yes, its NOT state. 
+
+For example, the text the user enters will be different for different users, thats state. The search list state will 
+also change depending on what the user enters. 
+
+State is like a component's memory. It lets a component keep track of some information and change it in response 
+to interactions. 
 
 
 
