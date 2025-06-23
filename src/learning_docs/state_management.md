@@ -68,4 +68,9 @@ function MyApp() {
 }
 ```
 The information we pass down from the parent to the button is called props. MyApp component has the count state and handleClick event handler and we pass both of them as props for each of the buttons. 
+
+**Adding interactivity**
+
+React lets you add event handlers to your JSX. Event handlers are functions that can be triggered in response to user interactions like clicking, hovering, focusing on form inputs. 
+
  

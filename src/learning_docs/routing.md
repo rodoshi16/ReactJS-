@@ -1,0 +1,2 @@
+***Non react applications ***
+When a user types in a url on a browser it sends a request to the server. The sever responds back with an html file. When a user clicks on another feature again, the process repeats in a loop. 
