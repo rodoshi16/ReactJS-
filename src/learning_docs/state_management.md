@@ -73,4 +73,14 @@ The information we pass down from the parent to the button is called props. MyAp
 
 React lets you add event handlers to your JSX. Event handlers are functions that can be triggered in response to user interactions like clicking, hovering, focusing on form inputs. 
 
- 
+
+***What about global state management?**
+Zustand is a library which allows this. Store is where you store the state so that components can access it. 
+
+```
+  create((set) => ({....}))
+```
+
+Create is Zustand's store creator.  This calls Zustand's main API and it creates a global state store. The function gets passed a set function, which we can use to update the set. 
+
+(Adding a test)
