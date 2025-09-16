@@ -87,3 +87,5 @@ This repo is meant to serve as:
 ## ✅ Contributions Welcome
 
 If you’re also learning React or want to improve this documentation, feel free to fork this repo, make a change, and open a pull request!
+
+Adding a test 
